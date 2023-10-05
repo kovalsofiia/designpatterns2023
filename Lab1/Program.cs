@@ -117,7 +117,6 @@ namespace Lab1
         static void Main(string[] args)
         {
             var connectBuilder = new ConectionToTheInternet.Builder();
-
             var firstConnection = connectBuilder
                 .SetProtocol("FTP")
                 .SetEncryption("TLS")
@@ -130,10 +129,19 @@ namespace Lab1
                 .AddAdditionalProperty("user", "username")
                 .Build();
 
+            var connectBuilder3 = new ConectionToTheInternet.Builder();
+            var thirdConnection = connectBuilder3
+                .SetProtocol("HTTPS")
+                .SetVersionOfAnIP("v6")
+                .AddAdditionalProperty("location", "Country")
+                .Build();
+
 
             firstConnection.ConnectTo();
             Console.WriteLine();
             secondConnection.ConnectTo();
+            Console.WriteLine(); 
+            thirdConnection.ConnectTo();
         }
     }
 }
