@@ -46,7 +46,6 @@
     <Compile Include="Customer.cs" />
     <Compile Include="DiscountCalculator.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="PersonalDiscount.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Purchase.cs" />
