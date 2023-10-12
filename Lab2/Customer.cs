@@ -8,8 +8,15 @@ namespace Lab2
 {
     internal class Customer
     {
-        public string Name { get; set; }
-        public double PersonalDiscountPercentage { get; set; }
+        public string Name;
+        public int PersonalDiscountPercentage;
 
+
+        public Customer(string name) { Name = name;}
+
+        public void SetPersonalDiscount(int personalDiscount)
+        {
+            PersonalDiscountPercentage = personalDiscount;
+        }
     }
 }

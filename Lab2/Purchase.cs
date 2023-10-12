@@ -16,5 +16,22 @@ namespace Lab2
         public DateTime PurchaseTime { get; set; }
         public string PaymentMethod { get; set; }
         public Customer Customer { get; set; }
+
+        public Purchase(string productName, string category, string manufacturer, double price, string description, DateTime purchaseTime, string paymentMethod, Customer customer)
+        {
+            ProductName = productName;
+            Category = category;
+            Manufacturer = manufacturer;
+            Price = price;
+            Description = description;
+            PurchaseTime = purchaseTime;
+            PaymentMethod = paymentMethod;
+            Customer = customer;
+        }
+
+        public override string ToString()
+        {
+            return $"{ProductName}, {Category}, {Price}";
+        }
     }
 }
