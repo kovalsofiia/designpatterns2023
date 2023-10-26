@@ -17,6 +17,122 @@ namespace Lab2
         //d.Знижка Z відсотків при оплаті карткою.
         //Врахувати всі можливі комбінації знижки.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Step 1: Create an interface that defines the component interface.
+        public interface IComponent
+        {
+            void Operation();
+        }
+
+        // Step 2: Create a concrete component that implements the component interface.
+        public class ConcreteComponent : IComponent
+        {
+            public void Operation()
+            {
+                Console.WriteLine("ConcreteComponent operation");
+            }
+        }
+
+        // Step 3: Create an abstract decorator class that also implements the component interface.
+        public abstract class Decorator : IComponent
+        {
+            private IComponent _component;
+
+            public Decorator(IComponent component)
+            {
+                _component = component;
+            }
+
+            // The Decorator delegates the Operation to the wrapped component.
+            public virtual void Operation()
+            {
+                _component.Operation();
+            }
+        }
+
+        // Step 4: Create concrete decorators that extend the functionality of the component.
+        public class ConcreteDecoratorA : Decorator
+        {
+            public ConcreteDecoratorA(IComponent component) : base(component)
+            {
+            }
+
+            public override void Operation()
+            {
+                base.Operation();
+                Console.WriteLine("ConcreteDecoratorA operation");
+            }
+        }
+
+        public class ConcreteDecoratorB : Decorator
+        {
+            public ConcreteDecoratorB(IComponent component) : base(component)
+            {
+            }
+
+            public override void Operation()
+            {
+                base.Operation();
+                Console.WriteLine("ConcreteDecoratorB operation");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         static void Main(string[] args)
         {
 
