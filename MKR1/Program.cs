@@ -47,9 +47,10 @@ namespace MKR1
                     int day = Convert.ToInt32(Console.ReadLine());
                     user_date = new DateTime(year, month, day);
                     payment_log.AddOnePayment(user_amount, user_date);
-                }
 
+                }
                 
+
             }
 
             payment_log.ShowAllPayments();
