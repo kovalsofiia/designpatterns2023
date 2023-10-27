@@ -11,7 +11,7 @@ namespace MKR1
 
         static void Main(string[] args)
         {
-            //Я використала шаблон Сінгл
+            //Я використала шаблон Сінглтон
             GetInfoFromUser();
         }
 
