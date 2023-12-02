@@ -11,7 +11,7 @@ namespace MKR1
 
         static void Main(string[] args)
         {
-            //Я використала шаблон Сінгл
+            //Я використала шаблон Сінглтон
             GetInfoFromUser();
         }
 
@@ -47,8 +47,13 @@ namespace MKR1
                     int day = Convert.ToInt32(Console.ReadLine());
                     user_date = new DateTime(year, month, day);
                     payment_log.AddOnePayment(user_amount, user_date);
+<<<<<<< HEAD
 
                 }
+=======
+                }
+                
+>>>>>>> 5f95b0ff17f705767ab507d85855beabd49f8fd9
                 
 
             }
