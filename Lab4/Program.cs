@@ -10,23 +10,46 @@ namespace Lab4
     {
         static void Main(string[] args)
         {
+
             var mediaPublisher = new Subject();
 
-            var user1 = new Observer("User1");
-            var user2 = new Observer("User2");
+            var user1 = new User("StudentA");
+            var user2 = new User("StudentB");
 
-            mediaPublisher.Attach(user1);
-            mediaPublisher.Attach(user2);
+            user1.Subscribe(mediaPublisher, "programming");
+            user2.Subscribe(mediaPublisher, "study");
 
+            mediaPublisher.PublishMedia(new Photo
+            {
+                AuthorNick = "PhotographerStudent",
+                Title = "Brainstorming Session",
+                Description = "Students collaborating on a creative project",
+                Url = "https://example.com/brainstorming",
+                Width = 1200,
+                Height = 800
+            });
 
-            mediaPublisher.PublishMedia("Photo1");
-            mediaPublisher.PublishMedia("Video1");
+            mediaPublisher.PublishMedia(new Video
+            {
+                AuthorNick = "VideographerStudent",
+                Title = "Study Break Fun",
+                Description = "Students taking a break and having fun in the campus courtyard",
+                Url = "https://example.com/fun-break",
+                DurationSeconds = 180
+            });
 
+            user1.Unsubscribe(mediaPublisher);
 
-            mediaPublisher.Detach(user1);
-
-
-            mediaPublisher.PublishMedia("Photo2");
+            mediaPublisher.PublishMedia(new Photo
+            {
+                AuthorNick = "StudentPhotographer",
+                Title = "Late Night Coding",
+                Description = "A student working on a programming assignment late into the night",
+                Url = "https://example.com/late-night-coding",
+                Width = 1600,
+                Height = 1200
+            });
         }
     }
 }
+

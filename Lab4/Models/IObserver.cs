@@ -8,6 +8,6 @@ namespace Lab4
 {
     public interface IObserver
     {
-        void Update(string media);
+        void Update(MediaItem media);
     }
 }

@@ -15,7 +15,7 @@ namespace Lab4
             _username = username;
         }
 
-        public void Update(string media)
+        public void Update(MediaItem media)
         {
             Console.WriteLine($"Hello {_username}. You have received new notification: \n   New media was published - {media}");
         }
